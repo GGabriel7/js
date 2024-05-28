@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p, h1 {
+            padding: 10px 30px;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        div#conteiner {
+            position: relative;
+            width: 90vw;
+            max-width: 600px;
+            height: 400px;
+            background-color: yellow;
+            margin: auto;
+        }
+
+        div.user {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: grey;
+            border-radius: 50%;
+            box-sizing: border-box;
+            cursor: pointer;
+            
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+        div#d1 {
+            left: 10%;
+        }
+        div#d2 {
+            left: 37%;
+        }
+        div#d3 {
+            left: 63%;
+        }
+        div#d4 {
+            left: 90%;
+        }
+
+        div.user:hover {
+            border: 3px solid black;
+            box-shadow: 0 0 5px white;
+        }
+
+        @media screen and (max-width: 600px){
+
+            div.user {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background-color: grey;
+            border-radius: 50%;
+            box-sizing: border-box;
+            cursor: pointer;
+            
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+            }
+
+            div#d1 {
+                top: 20%;
+                left: 50%;
+            }
+            div#d2 {
+                top: 40%;
+                left: 50%;
+            }
+            div#d3 {
+                top: 60%;
+                left: 50%;
+            }
+            div#d4 {
+                top: 80%;
+                left: 50%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eos eveniet repellat doloribus error, at corrupti fugiat magni quae saepe debitis! Fugit aliquam sit odio itaque cupiditate architecto, doloribus exercitationem.</p>
+
+    <div id="conteiner">
+        <div class="user" id="d1"></div>
+        <div class="user" id="d2"></div>
+        <div class="user" id="d3"></div>
+        <div class="user" id="d4"></div>
+    </div>
+
+    <script>
+        window.alert('Olá, mundo!');
+        window.confirm('Gostando de JS?');
+        window.prompt('Qual seu nome?');
+    </script>
+</body>
+</html>
