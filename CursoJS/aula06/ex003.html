@@ -47,6 +47,12 @@
 
         window.alert(`${n1} + ${n2} = ${s}`) //Só pode com crase ``
         // Ou ('n1 + ' + ' + n2 + ' = ' + s')
+
+        // Como Formatar Números
+        var num = 1550.5
+        num.replace('.', ',') //trocar caracter
+        num.toFixed(2) //Colocar casas decimasi
+        num.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})// OU currency: 'USD', 'EUR' // Colocar cifrão
     </script>
 </body>
 </html>
