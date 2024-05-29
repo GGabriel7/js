@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: grey;
+            color: white;
+        }
+
+        div {
+            width: 90vw;
+            max-width: 400px;
+            background-color: lightgray;
+            color: black;
+            margin: auto;
+        }
+
+        p, h1 {
+            padding: 10px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Olá, mundo!</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est eos eveniet repellat doloribus error, at corrupti fugiat magni quae saepe debitis! Fugit aliquam sit odio itaque cupiditate architecto, doloribus exercitationem.</p>
+    </div>
+
+    <script>
+        var n1 = Number(window.prompt('Digite um número'));
+        var n2 = Number(window.prompt('Digite outro número'));
+        // Também pode converter para numero com Number.parseInt(n) ou Number.parseFloat(n)
+        // Ou somente parseInt(n) ou parseFloar()
+        // Pode converter para string pode ser com String(n) ou n.toString()
+        s = n1 + n2
+
+        window.alert(`${n1} + ${n2} = ${s}`) //Só pode com crase ``
+        // Ou ('n1 + ' + ' + n2 + ' = ' + s')
+    </script>
+</body>
+</html>

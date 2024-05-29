@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #login {
+            padding-left: 10px;
+            background-color: purple;
+            color: white;
+            font-size: 2em;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        var nome = window.prompt('digite seu nome:');
+
+        document.write(`<div id="login"> Olá, ${nome}! Seu nome tem ${nome.length} caracteres</div>`)
+
+        document.write(`<div id="login"> Seu nome com letras Maiusculas:  ${nome.toUpperCase()} </div>`)
+
+        document.write(`<div id="login"> Seu nome com letras Minusculas: ${nome.toLowerCase()}! </div>`)
+    </script>
+</body>
+</html>
