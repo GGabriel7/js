@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Iniciando Estudos com DOM</h1>
+    <p>BLA <strong>BLA</strong> BLA</p>
+    <p id="text">CLO CLO CLO</p>
+    <div id="msg">TRU TRU TRU</div>
+
+    <script>
+        //POR tags
+        var p1 = window.document.getElementsByTagName('p')[0]//quando Elements tiver no plural, precisa identificar [0-X]
+        window.document.write(`<br> No primerio paragrafo está escrito: ${p1.innerText}`/*p1.innetHTML leva juntos as TAG's*/)
+        p1.style.color = 'red'
+
+        var corpo = window.document.body
+        corpo.style.background = 'lightgray'
+
+        //Por identificadores: id, name, class
+        var c = window.document.getElementById('msg')
+        c.innerText = 'Mudando frase e background com JS'
+        c.style.background = 'lightgreen'
+
+        //seletores: CSS - Pode dar problemas em navegadores mais antigos
+        var d = window.document.querySelector('p#text')
+        d.style.color = '#0000FF'
+    </script>
+</body>
+</html>
