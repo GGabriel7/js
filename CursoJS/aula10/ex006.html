@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #cont {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            font: bolder 30px arial, Helvetica, sans-serif;
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            line-height: 300px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.664);
+
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="cont" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" onkeydown="a()">
+        Interaja...
+    </div>
+
+    <script>
+        var a = document.getElementById('cont') //Tem um jeito melhor para fazer isso com variaveis globais.
+
+        /*
+        Em vez de colocar no HTML, pode ser colocado direto no JS. Assim:
+        
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        */
+
+        function clicar() {
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+
+        function entrar() {
+            a.innerText = 'Entrou!'
+        }
+
+        function sair() {
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
