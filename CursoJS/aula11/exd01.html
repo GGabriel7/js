@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imigração</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+
+    <label for="txtp"> Seu país:</label>
+    <input type="text" name="txtp" id="txtp" maxlength="20">
+    <input type="button" value="Verificar" onclick="clicar()">
+
+    <div id="Estado">
+
+    </div>
+
+    <script>
+        function clicar() {
+            var país = document.getElementById('txtp')
+            var result = document.getElementById('Estado')
+
+            var p = país.value.toUpperCase()
+
+            Estado.innerHTML = `Você nascendo em ${p}, `
+            if (p == 'BRASIL') {
+                Estado.innerHTML += 'você é Brasileiro.'
+            } else {
+                Estado.innerHTML += 'Você é estrangeiro.'
+            }
+        }
+    </script>
+</body>
+</html>

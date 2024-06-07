@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+    background-color: rgb(224, 223, 113);
+}
+
+h1 {
+    text-align: center;
+    margin: 15px;
+    color: white;
+}
+
+#cont {
+    margin: auto;
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.459);
+}
+
+#horas {
+    text-align: center;
+    padding: 15px;
+}
+
+#foto {
+    background-color: black;
+    height: 180px;
+    width: 180px;
+    margin: auto;
+    border-radius: 50%;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: powderblue;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 50px;
+            color: white;
+        }
+
+        #cont {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.158);
+
+            transform: translate(-50%, -50%);
+        }
+
+        .campo {
+            padding: 10px;
+        }
+
+        .campo > input {
+            width: 78.297%;
+            height: 50px;
+            
+            font-size: 2em;
+        }
+
+        #botao {
+            width: 50%;
+            margin: auto;
+            margin-right: 18%;
+        }
+
+        #botao > input {
+            padding: 5px 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #result{
+            position: absolute;
+            width: 100%;
+            max-height: 100px;
+            background-color: rgb(71, 93, 99);
+            top: 250px;
+            border-radius: 0 0 10px 10px;
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div id="cont">
+        <div class="campo">
+            <label for="txtn1">Escolha:</label>
+            <input type="number" name="txtn1" id="txtn1" required placeholder="0">
+        </div>
+        <div class="campo">
+            <label for="txtn1">Escolha:</label>
+            <input type="number" name="txtn2" id="txtn2" required placeholder="0">
+        </div>
+
+        <div id="botao">
+            <input type="button" value="+" onclick="soma()">
+            <input type="button" value="-" onclick="sub()">
+            <input type="button" value="*" onclick="mult()">
+            <input type="button" value="/" onclick="div()">
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function soma() {
+            var txn1 = document.getElementById('txtn1')
+            var txn2 = document.getElementById('txtn2')
+            var res = document.getElementById('result')
+
+            var n1 = Number(txn1.value)
+            var n2 = Number(txn2.value)
+            var soma = n1 + n2
+
+            res.innerHTML = `Resultado: ${soma}`
+        }
+
+        function sub() {
+            var txn1 = document.getElementById('txtn1')
+            var txn2 = document.getElementById('txtn2')
+            var res = document.getElementById('result')
+
+            var n1 = Number(txn1.value)
+            var n2 = Number(txn2.value)
+            var soma = n1 - n2
+
+            res.innerHTML = `Resultado: ${soma}`
+        }
+
+        function mult() {
+            var txn1 = document.getElementById('txtn1')
+            var txn2 = document.getElementById('txtn2')
+            var res = document.getElementById('result')
+
+            var n1 = Number(txn1.value)
+            var n2 = Number(txn2.value)
+            var soma = n1 * n2
+
+            res.innerHTML = `Resultado: ${soma}`
+        }
+
+        function div() {
+            var txn1 = document.getElementById('txtn1')
+            var txn2 = document.getElementById('txtn2')
+            var res = document.getElementById('result')
+
+            var n1 = Number(txn1.value)
+            var n2 = Number(txn2.value)
+
+            if (n2 == 0) {
+                res.innerHTML = '[ERROR]'
+            } else {
+                var soma = n1 / n2
+                res.innerHTML = `Resultado: ${soma}`
+            }
+        }
+    </script>
+</body>
+</html>
