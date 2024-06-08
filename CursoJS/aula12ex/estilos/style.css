@@ -7,28 +7,31 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    
-    background-color: rgb(224, 223, 113);
+    background-color: #434552;
 }
 
-h1 {
+/* HEADER */
+
+header {
     text-align: center;
     margin: 15px;
     color: white;
 }
 
+/* MAIN */
+
 #cont {
     margin: auto;
     width: 400px;
-    height: 250px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.459);
+    padding: 15px 0;
 }
 
 #horas {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
 }
 
 #foto {
@@ -37,4 +40,17 @@ h1 {
     width: 180px;
     margin: auto;
     border-radius: 50%;
+    overflow: hidden;
+}
+
+#foto > img {
+    width: 100%;
+}
+
+/* FOOTER */
+
+footer {
+    margin: 15px;
+    text-align: center;
+    font-size: 1.5em;
 }
