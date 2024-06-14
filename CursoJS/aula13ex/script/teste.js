@@ -1,7 +1,7 @@
 var inicio = 1
-var fim = 10
+var fim = 8
 var passo = 1
 
-for (inicio; inicio <= fim; inicio += passo) {
-    console.log(`${inicio}`)
+for (var c = inicio; c <= fim; c += passo) {
+    console.log(`${c}`)
 }
