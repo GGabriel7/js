@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(87, 240, 240);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.conteiner {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.315);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.conteiner > h1 {
+    text-align: center;
+}
+
+.form input[type="number"] {
+    width: 200px;
+}
+
+.lastResult {
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
