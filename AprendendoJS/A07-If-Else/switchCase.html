@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="clima">Como está o clima lá fora? </label>
+    <select id="clima" class="clima">
+        <option value="">--Escolha--</option>
+        <option value="sol">Ensolarado</option>
+        <option value="chuva">Chuva</option>
+        <option value="neve">Neve</option>
+        <option value="neblina">Neblina</option>
+    </select>
+
+    <p class="text"></p>
+
+    <script>
+        const clima = document.querySelector('.clima')
+        const text = document.querySelector('.text')
+
+        clima.addEventListener('change', escolhaClima)
+
+        function escolhaClima() {
+            const escolha = clima.value
+
+            switch (escolha) {
+                case 'sol': 
+                text.textContent = 'Em um belo dia de sol lá fora, é hora de aproveitar! Vá a praia, parque ou qualquer coisa para aproveitar o dia. Apenas não perca o momento!'
+                break
+
+                case 'chuva': 
+                text.textContent = 'Em um dia chuvoso, ecite sair de casa. Aproveite o seu tempo em casa com jogos, filmes ou algo da sua preferencia. Caso precise sair, não esqueça o guarda-chuva.'
+                break
+
+                case 'neve': 
+                text.textContent = 'Dias que podem ser aproveitados tanto dentro de casa como fora, sempre com muito cuidado ao sair em dias de neve. Aproveite em casa ou vá fazer um boneco de neve na rua.'
+                break
+
+                case 'neblina': 
+                text.textContent = 'Dias com neblinas parecem dias mais sombrios e podem tirar a beleze das paissagens caso você resolva sair. No mais, você também pode aproveitar em casa ou arriscar e sair de casa.'
+                break
+
+                default: 
+                text.textContent = ''
+            }
+        }
+    </script>
+</body>
+</html>

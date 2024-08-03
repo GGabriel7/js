@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letras do alfabeto</title>
+</head>
+<body>
+    <label for="input">Escolha um número entre 1 e 26: </label>
+    <input type="number" class="input" id="input">
+
+    <button class="button">Gerar</button>
+
+    <p class="text"></p>
+
+    
+    <button class="reset" style="display: none;">Tente novamente!</button>
+
+    <script>
+        const num = document.querySelector('.input')
+        const button = document.querySelector('.button')
+        const text = document.querySelector('.text')
+        const reset = document.querySelector('.reset')
+
+        const alphaString = 'a b c d e f g h i j k l m n o p q r s t u v w x y z'.toUpperCase()
+        const alphaArray = alphaString.split(' ')
+        let alpha = []
+
+        button.addEventListener('click', gerarAlpha)
+
+        function gerarAlpha() {
+            const number = Number(num.value)
+
+            if (number > 0 && number < 27) {
+
+                for (let i = 0; i < number; i++) {
+                    alpha.push(alphaArray[i])
+                }
+                let alfabeto = alpha.join(' - ')
+
+                text.textContent = `Alfabeto até a ${number}° letra: `
+
+                text.textContent += alfabeto
+
+            } else {
+                text.textContent = 'Informação Inválida!'
+            }
+
+            input.disabled = true
+            button.disabled = true
+            reset.style.display = 'block'
+            
+        }
+
+        reset.addEventListener('click', resetAll)
+
+        function resetAll() {
+            input.disabled = false
+            button.disabled = false
+            input.value = ''
+            input.focus()
+            text.textContent = ''
+            reset.style.display = 'none'
+            alpha = []
+        }
+    </script>
+</body>
+</html>

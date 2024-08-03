@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Machine</title>
+</head>
+<body>
+    <button>Start Machine</button>
+    <p>A máquina está pausada.</p>
+
+    <script>
+
+        const button = document.querySelector('button')
+        const p = document.querySelector('p')
+
+        button.addEventListener('click', startOrPause)
+
+        function startOrPause() {
+            if (button.textContent === 'Start Machine' ) {
+                p.textContent = 'A máquina está rodando.'
+                button.textContent = 'Pause Machine'
+            } else {
+                p.textContent = 'A máquina está pausada.'
+                button.textContent = 'Start Machine'
+            }
+        }
+
+    </script>
+</body>
+</html>

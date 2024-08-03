@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Impar</title>
+
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: rgb(111, 194, 241);
+        }
+    
+        .conteiner {
+            max-width: 600px;
+            background-color: white;
+            padding: 10px 10px 30px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+        }
+
+        .form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .conteiner > h1 {
+            margin-bottom: 40px;
+        }
+
+        .result {
+            padding: 5px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+
+        <h1>Par ou Impar</h1>
+        
+        <div class="form">
+            <label for="num">Escolha um Número: </label>
+            <input type="number" class="num" id="num" required>
+            <input type="button" value="Verificar" class="button">
+        </div>
+
+    </div>
+
+    <script>
+
+        const button = document.querySelector('.button')
+        const num = document.querySelector('.num')
+        const conteiner = document.querySelector('.conteiner')
+
+        button.addEventListener('click', () => {
+            
+            let numero = Number(num.value)
+
+            let result = document.querySelector('.result')
+            if (result) {
+                result.remove()
+            }
+
+            let para = document.createElement('p')
+            conteiner.appendChild(para)
+            para.className = 'result'
+
+            if ( numero % 2 === 0) {
+                para.textContent = `O número ${numero} é PAR`
+                para.style.backgroundColor = 'blue'
+                para.style.color = 'white'
+            } else {
+                para.textContent = `O número ${numero} é IMPAR`
+                para.style.backgroundColor = 'yellow'
+            }
+
+            num.value = ''
+            num.focus()
+
+        })
+
+    </script>
+</body>
+</html>
