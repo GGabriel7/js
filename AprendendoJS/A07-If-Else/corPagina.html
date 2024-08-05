@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cor da Pagina</title>
+</head>
+<body>
+    <h1>Exemplo de Titulo</h1>
+
+    <label for="cores">Escolha a cor da pagina</label>
+    <select class="cores" id="cores">
+        <option value="white" selected>Branco</option>
+        <option value="black">Preto</option>
+        <option value="purple">Roxo</option>
+        <option value="yellow">Amarelo</option>
+        <option value="red">Vermelho</option>
+    </select>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde consectetur accusamus, quis quibusdam atque dolorem reiciendis veritatis distinctio quasi expedita magni eveniet, fugiat illo minima magnam odit, sunt dicta beatae!
+    </p>
+
+    <script>
+        const cores = document.querySelector('.cores')
+        const pagina = document.querySelector('html')
+
+        cores.addEventListener('change', () => {
+            let escolha = cores.value
+            console.log(escolha)
+
+            switch (escolha) {
+                case 'white': 
+                upadte('white', 'black')
+                break
+
+                case 'black': 
+                upadte('black', 'white')
+                break
+
+                case 'purple': 
+                upadte('purple', 'yellow')
+                break
+
+                case 'yellow': 
+                upadte('yellow', 'purple')
+                break
+
+                case 'red': 
+                upadte('red', 'white')
+                break
+            }
+
+            /*
+            Também podia ser com if...else
+            
+            if (escolha === 'branco') {
+                update('white', 'black')
+            } else if (escolha === 'preto') {
+                update('black', 'white') 
+            }
+            .
+            .
+            .
+            */
+        })
+
+        const upadte = (bgCor, txtCor) => {
+            pagina.style.backgroundColor = bgCor
+            pagina.style.color = txtCor
+        }
+    </script>
+</body>
+</html>

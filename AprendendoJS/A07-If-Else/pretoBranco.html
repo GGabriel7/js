@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preto ou Branco</title>
+</head>
+<body>
+    <label for="bg">Selecione o tema: </label>
+    <select class="bg" id="bg">
+        <option value="branco" selected>Branco</option>
+        <option value="preto">Preto</option>
+    </select>
+
+    <h1>Exemple de Texto</h1>
+
+    <script>
+        const bg = document.querySelector('.bg')
+        const html = document.querySelector('html')
+
+        function update(bgCor, textCor) {
+            html.style.backgroundColor = bgCor
+            html.style.color = textCor
+        }
+
+        bg.addEventListener('change', mudaCor)
+
+        function mudaCor() {
+            bg.value === 'preto'
+            ? update('black', 'white')
+            : update('white', 'black')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffaeae;
+    margin: auto;
+    text-align: center;
+    justify-content: baseline;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.maquina {
+    padding: 20px;
+}
+
+.login {
+    padding: 20px;
+    display: none;
+}
