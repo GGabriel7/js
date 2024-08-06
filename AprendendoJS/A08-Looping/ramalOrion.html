@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgba(71, 197, 219, 0.973);
+        }
+        .conteiner {
+            background-color: white;
+            margin: auto;
+            max-width: 500px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 6px #0000008e;
+        }
+        .txt {
+            font-weight: 700;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <label for="name">Pesquise o ramal pelo Nome: </label>
+        <input list="names" id="name">
+        <datalist id="names">
+            <option value="Thamyres">
+            <option value="Evaldo">
+            <option value="Plantao">
+            <option value="Islany">
+            <option value="Eduardo">
+            <option value="Priscila">
+            <option value="Antonio">
+            <option value="Fernando">
+            <option value="Rafael">
+            <option value="Gleydson">
+            <option value="Val">
+            <option value="Gisele">
+            <option value="Lourena">
+            <option value="Mayara">
+            <option value="Ivoneide">
+            <option value="Gabriel">
+        </datalist>
+        <p class="txt"></p>
+    </div>
+
+    <script>
+        const name = document.querySelector('#name')
+        const txt = document.querySelector('.txt')
+
+        const ramais = [
+            'Thamyres:9125',
+            'Evaldo:9122',
+            'Plantao:9139',
+            'Islany:9136',
+            'Eduardo:9137',
+            'Gabriel:9140',
+            'Priscila:9142',
+            'Antonio:9141',
+            'Fernando:9144',
+            'Rafael:9134',
+            'Gleydson:9123',
+            'Val:9070',
+            'Gisele:9016',
+            'Lourena:9014',
+            'Mayara:9182',
+            'Ivoneide:9147'
+        ]
+
+        name.addEventListener('change', () => {
+            const searchName = name.value.toLowerCase()
+            name.value = ''
+            name.focus()
+
+            for (const ramal of ramais) {
+                const splitRamal = ramal.split(':')
+
+                if (splitRamal[0].toLowerCase() === searchName) {
+                    txt.textContent = `${splitRamal[0]}: ${splitRamal[1]}`
+                    break
+                }
+
+                if (txt.textContent === '') {
+                    txt.textContent = 'Ramal não encontrado.'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

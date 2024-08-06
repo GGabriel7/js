@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" class="num" max="10">
+    <button class="button">Calcular</button>
+    <button class="buttonClear">Limpar</button>
+    <p>Escolha um número e veja sua tabuada</p>
+    <p class="txt"></p>
+
+    <script>
+        const num = document.querySelector('.num')
+        const txt = document.querySelector('.txt')
+
+        function calculate() {
+            if (num.value === '') {
+                num.value = 0
+            }
+
+            txt.textContent = ''
+
+            for (let i = 1; i <= 10; i++) {
+                const result = `${num.value} x ${i} = ${num.value * i}`
+                txt.innerHTML += `${result}<br>`
+            }
+            txt.innerHTML += '<br>FIM<br><br>'
+        }
+
+        const button = document.querySelector('.button')
+        const buttonClear = document.querySelector('.buttonClear')
+        button.addEventListener('click', calculate)
+        buttonClear.addEventListener('click', () => (txt.innerHTML = ''))
+    </script>
+</body>
+</html>
