@@ -14,9 +14,10 @@
             background-color: white;
             margin: auto;
             max-width: 500px;
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 2px 2px 6px #0000008e;
+            text-align: center;
         }
         .txt {
             font-weight: 700;
@@ -47,6 +48,7 @@
             <option value="Ivoneide">
             <option value="Gabriel">
         </datalist>
+        
         <p class="txt"></p>
     </div>
 
@@ -77,6 +79,7 @@
             const searchName = name.value.toLowerCase()
             name.value = ''
             name.focus()
+            txt.textContent = ''
 
             for (const ramal of ramais) {
                 const splitRamal = ramal.split(':')

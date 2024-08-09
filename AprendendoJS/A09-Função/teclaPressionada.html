@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecla</title>
+</head>
+<body>
+    <h2>Pressione alguma tecla</h2>
+
+    <input type="text" id="txt">
+
+    <p id="output"></p>
+
+    <script>
+        const txt = document.querySelector('#txt')
+        const output = document.querySelector('#output')
+
+        txt.addEventListener('keydown', (event) => {
+            output.textContent = `Você clicou em ${event.key}`
+        }) /*Tambem podia ser com: ( {key} ) => {
+            [key]
+        }
+        */
+
+    </script>
+</body>
+</html>

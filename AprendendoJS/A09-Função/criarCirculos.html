@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita barras de rolagem */
+            background-color: black;
+        }
+        canvas {
+            opacity: 0.4;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        const listCor = [
+            'aquamarine',
+            'blueviolet',
+            'burlywood',
+            'cornflowerblue',
+            'darkblue',
+            'darkgreen',
+            'deeppink',
+            'lightpink',
+            ]
+
+        const random = (x, y=0) => {
+            return Math.floor((Math.random() + y) * x)
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            for (let i=0; i < 100; i++) {
+                const canvas = document.createElement('canvas')
+                const ctx = canvas.getContext('2d')
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                // Começa um novo caminho
+                ctx.beginPath();
+
+                // Desenha o arco (círculo)
+                ctx.arc(random(canvas.width), random(canvas.height), random(100, 1), 0, 2 * Math.PI);
+
+                // Preenche o círculo com uma cor
+                ctx.fillStyle = listCor[random(listCor.length)];
+                ctx.fill();
+
+                document.body.appendChild(canvas)
+            }
+
+        })
+    </script>
+</body>
+</html>

@@ -86,30 +86,13 @@ linha('Percorrendo com do...while')
 let esportesFavs3 = 'Meus esportes favoritos: '
 let i2 = 0
 do {
-    if (i2 === esportesOlimpicos.length-1) {
-        esportesFavs3 += `e ${esportesOlimpicos[i2]}.`
-    } else if (i2 === esportesOlimpicos.length-2) {
-        esportesFavs3 += `${esportesOlimpicos[i2]} `
+    if (i === esportesOlimpicos.length-1) {
+        esportesFavs3 += `e ${esportesOlimpicos[i]}.`
+    } else if (i === esportesOlimpicos.length-2) {
+        esportesFavs3 += `${esportesOlimpicos[i]} `
     } else {
-        esportesFavs3 += `${esportesOlimpicos[i2]}, `
+        esportesFavs3 += `${esportesOlimpicos[i]}, `
     }
-    i2++
+    i++
 } while (i2 < esportesOlimpicos.length)
 console.log(esportesFavs3)
-
-linha('Exercicio 1')
-
-let text = 'Contagem regressiva - '
-let num = 10
-while (num >= 0) {
-    if (num === 10) {
-        text += `começando: ${num} - `
-    } else if (num === 0) {
-        text += `${num} - FIM`
-    } else {
-        text += `${num} - `
-    }
-    num--
-}
-
-console.log(text)

@@ -67,49 +67,14 @@ for (const esporte of esportesOlimpicos) {
 
 linha('Percorrendo com while')
 
-let esportesFavs2 = 'Meus esportes favoritos: '
+let esportesFav = 'Meus esportes favoritos: '
 let i = 0
 while (i < esportesOlimpicos.length) {
-    if (i === esportesOlimpicos.length-1) {
-        esportesFavs2 += `e ${esportesOlimpicos[i]}.`
-    } else if (i === esportesOlimpicos.length-2) {
-        esportesFavs2 += `${esportesOlimpicos[i]} `
+    if (i === esportesOlimpicos.length - 1) {
+        esportesFav += `e ${esportesOlimpicos[i]}`
+    } else if (i === esportesOlimpicos.length - 2) {
+        esportesFav += `${esportesOlimpicos[i]} `
     } else {
-        esportesFavs2 += `${esportesOlimpicos[i]}, `
+        esportesFav += `${esportesOlimpicos[i]}, `
     }
-    i++
 }
-console.log(esportesFavs2)
-
-linha('Percorrendo com do...while')
-
-let esportesFavs3 = 'Meus esportes favoritos: '
-let i2 = 0
-do {
-    if (i2 === esportesOlimpicos.length-1) {
-        esportesFavs3 += `e ${esportesOlimpicos[i2]}.`
-    } else if (i2 === esportesOlimpicos.length-2) {
-        esportesFavs3 += `${esportesOlimpicos[i2]} `
-    } else {
-        esportesFavs3 += `${esportesOlimpicos[i2]}, `
-    }
-    i2++
-} while (i2 < esportesOlimpicos.length)
-console.log(esportesFavs3)
-
-linha('Exercicio 1')
-
-let text = 'Contagem regressiva - '
-let num = 10
-while (num >= 0) {
-    if (num === 10) {
-        text += `começando: ${num} - `
-    } else if (num === 0) {
-        text += `${num} - FIM`
-    } else {
-        text += `${num} - `
-    }
-    num--
-}
-
-console.log(text)
