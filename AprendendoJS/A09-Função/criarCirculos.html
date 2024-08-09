@@ -33,8 +33,8 @@
             'lightpink',
             ]
 
-        const random = (x, y=0) => {
-            return Math.floor((Math.random() + y) * x)
+        const random = (x) => {
+            return Math.floor(Math.random() * x)
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -50,7 +50,7 @@
                 ctx.beginPath();
 
                 // Desenha o arco (círculo)
-                ctx.arc(random(canvas.width), random(canvas.height), random(100, 1), 0, 2 * Math.PI);
+                ctx.arc(random(canvas.width), random(canvas.height), random(100), 0, 2 * Math.PI);
 
                 // Preenche o círculo com uma cor
                 ctx.fillStyle = listCor[random(listCor.length)];
