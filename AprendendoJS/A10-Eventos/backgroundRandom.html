@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <button>Random background-color</button>
+
+    <script>
+        const btn = document.querySelector('button')
+
+        const randomColor = () => {
+            const number = ['0', '1', '2', '3' , '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+
+            let color = ''
+
+            for (let i=0; i < 6; i++) {
+                color += number[Math.floor(Math.random() * 16)]
+            }
+
+            return `#${color}`
+        }
+
+        btn.addEventListener('click', () => {
+            document.body.style.backgroundColor = randomColor()
+
+            console.log(randomColor())
+        })
+    </script>
+</body>
+</html>

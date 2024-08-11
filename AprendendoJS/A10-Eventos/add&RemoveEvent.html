@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Event Example</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            padding: 20px;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <button class="addEvent">Cor aleatoria</button>
+    
+    <div>Ola, mundo</div>
+
+    <script>
+
+        const btnAdd = document.querySelector('.addEvent')
+        const div = document.querySelector('div')
+
+        const randomColor = () => {
+            const number = ['0', '1', '2', '3' , '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+
+            let color = ''
+
+            for (let i=0; i < 6; i++) {
+                color += number[Math.floor(Math.random() * 16)]
+            }
+
+            return `#${color}`
+        }
+
+        let count = 0
+        function changeBgColor() {
+            div.style.backgroundColor = randomColor()
+            
+            count++
+            
+            if (count === 5) {
+                btnAdd.removeEventListener('click', changeBgColor)//Remove o evento do botão quanto clicar 5 vezes 
+            }
+
+        }
+
+        function changeColor() {
+            div.style.color = randomColor()
+        }
+
+        btnAdd.addEventListener('click', changeBgColor)
+        btnAdd.addEventListener('click', changeColor)
+
+        //btnAdd.onclick = changeBgColor // Voce tambem pode fazer assim ou no html tambem. Mas não são prativas recomendadas.
+
+    </script>
+</body>
+</html>
