@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target e currentTarget</title>
+</head>
+<body>
+    <body>
+        <div id="container">
+          <button>Click me!</button>
+        </div>
+        <pre id="output"></pre>
+      </body>
+
+      <p>target se refere ao elemento real no qual foi acionado o evento. No caso dessa pagina, a parte que foi clicada é o que referencia o target. <br><br> Enquanto o currentTarget se refere apenas ao elemento no qual foi adicionado o eventListener. Que no caso dessa pagina foi add em todos para ficar de exemplo.</p>
+
+      <script>
+        const output = document.querySelector("#output");
+        function handleClick(e) {
+        const logTarget = `Target: ${e.target.tagName}`;
+        const logCurrentTarget = `Current target: ${e.currentTarget.tagName}`;
+        output.textContent += `${logTarget}, ${logCurrentTarget}\n`;
+        }
+
+        const container = document.querySelector("#container");
+        const button = document.querySelector("button");
+
+        document.body.addEventListener("click", handleClick);
+        container.addEventListener("click", handleClick);
+        button.addEventListener("click", handleClick);
+            </script>
+</body>
+</html>

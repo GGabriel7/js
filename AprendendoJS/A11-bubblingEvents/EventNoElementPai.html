@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Click no botão</h1>
+    
+    <div class="conteiner">
+        <button>Click</button>
+    </div>
+
+    <pre class="output"></pre>
+
+    <pre>Obs.: A captura do evento ocorre do mais aninhado até o menos aninhado.
+body -> div -> button.
+Para mudar isso, voce pode adicionar no <strong>addEventListener</strong> isso:
+('click', event, {capture: true})
+    </pre>
+
+    <script>
+        const output = document.querySelector('.output')
+        
+        function clickMe(event) {
+            output.textContent += `Você clicou no elemento ${event.currentTarget.tagName}\n`
+        }
+
+        const button = document.querySelector('button')
+        const conteiner = document.querySelector('.conteiner')
+
+        button.addEventListener('click', clickMe)//Ativa todos os eventos pois, ao clicar no button, clica na div e no body
+        conteiner.addEventListener('click', clickMe)// Se um pouco afastado do botão, ativa só o evento da div e do body
+        document.body.addEventListener('click', clickMe)//Se clicar apenas no corpo, ativa só o evento do body
+
+    </script>
+</body>
+</html>

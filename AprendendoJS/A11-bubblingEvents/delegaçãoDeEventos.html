@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegação de Eventos</title>
+
+    <style>
+        .file {
+            height: 100px;
+            width: 25%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h3>Fazendo o mesmo evento acontecer em varios elementos utilizando o elemento pai</h3>
+
+    <div class="conteiner" >
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+        <div class="file"></div>
+    </div>
+
+    <script>
+        const randomColor = () => {
+            const number = ['0', '1', '2', '3' , '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+
+            let color = ''
+
+            for (let i=0; i < 6; i++) {
+                color += number[Math.floor(Math.random() * 16)]
+            }
+
+            return `#${color}`
+        }
+        
+        const conteiner = document.querySelector('.conteiner')
+
+        conteiner.addEventListener('click', (event) => {
+            event.target.style.backgroundColor = randomColor()
+        })
+    </script>
+</body>
+</html>

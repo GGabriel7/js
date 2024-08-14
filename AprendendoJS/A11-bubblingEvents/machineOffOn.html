@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="off">A máquina está desligada</button>
+    <script>
+        const btn = document.querySelector('.off');
+
+        btn.addEventListener('click', () => {
+
+        if (btn.textContent === 'A máquina está ligada') {
+            btn.textContent = 'A máquina está desligada'
+        } else {btn.textContent = 'A máquina está ligada'}
+
+        })
+    </script>
+</body>
+</html>

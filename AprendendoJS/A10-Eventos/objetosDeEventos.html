@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto de Eventos</title>
+</head>
+<body>
+    <h1>Manipulando OBJETOS de EVENTOS</h1>
+    <button style="padding: 20px;">Random Color</button>
+
+    <script>
+        const btn = document.querySelector("button")
+
+        function random(number) {
+            return Math.floor(Math.random() * (number + 1))
+        }
+
+        function bgChange(event) {
+            const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`
+            event.target.style.backgroundColor = rndCol //Com (event), faz com que seja alterado a propriedade do proprio objeto
+
+            console.log(e)
+        }
+
+        btn.addEventListener("click", bgChange);
+    </script>
+</body>
+</html>

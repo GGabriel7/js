@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproduzir Vídeo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            padding: 15px;
+            margin: 20px 5px;
+        }
+
+        .conteiner {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #bdbdbd;
+        }
+
+        video {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <button>Display video</button>
+
+    <div class="conteiner">
+        <video>
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm"/>
+
+            <p>Seu navegador não suporta vídeo em HTML. Aqui está um <a href="rabbit320.mp4">link para o vídeo</a> em vez disso.</p>
+        </video>
+    </div>
+
+    <script>
+        const btn = document.querySelector('button')
+        const box = document.querySelector('.conteiner')
+        const video = document.querySelector('video')
+
+        btn.addEventListener('click', () => box.style.display = 'flex')
+        
+        video.addEventListener('click', (event) => {
+            event.stopPropagation()
+            video.play()
+        })
+
+        box.addEventListener('click', () => box.style.display = 'none')
+    </script>
+</body>
+</html>
