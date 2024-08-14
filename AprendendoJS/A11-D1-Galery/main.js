@@ -1,18 +1,14 @@
-const displayedImage = document.querySelector('.displayed-img');
+const displayedImg = document.querySelector('.displayedImg') 
 const thumbBar = document.querySelector('.thumb-bar');
-
-const btn = document.querySelector('button');
+const btn = document.querySelector('.dark');
 const overlay = document.querySelector('.overlay');
 
-/* Declaring the array of image filenames */
+btn.addEventListener('click', () => {
+    overlay.classList.toggle('darken')
+})
 
-/* Declaring the alternative text for each image file */
-
-/* Looping through images */
-
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
-thumbBar.appendChild(newImage);
-
-/* Wiring up the Darken/Lighten button */
+thumbBar.addEventListener('click', (event) => {
+    if (event.target.getAttribute('alt')) {
+        displayedImg.src = `images/pic${event.target.getAttribute('alt')}.jpg`
+    }
+})
