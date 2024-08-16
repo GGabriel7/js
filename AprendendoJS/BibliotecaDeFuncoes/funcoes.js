@@ -1,3 +1,7 @@
+function linha(txt = null) {
+    console.log(`\n-=-=-=- ${txt} -=-=-=-`)
+}
+
 function drawCircle(x, y, size) {
     ctx.fillStyle = 'white'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -19,3 +23,5 @@ const randomColor = () => {
 
     return `#${color}`
 }
+
+module.exports = {randomColor, linha, drawCircle}
