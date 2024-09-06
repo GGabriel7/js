@@ -24,4 +24,8 @@ const randomColor = () => {
     return `#${color}`
 }
 
-module.exports = {randomColor, linha, drawCircle}
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+module.exports = {randomColor, linha, drawCircle, randomNumber}

@@ -1,0 +1,36 @@
+Object tambem é um JSON válido<br><br>
+
+<pre>
+  [
+    {
+      "name": "Molecule Man",
+      "age": 29,
+      "secretIdentity": "Dan Jukes",
+      "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
+    },
+    {
+      "name": "Madame Uppercut",
+      "age": 39,
+      "secretIdentity": "Jane Wilson",
+      "powers": [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+      ]
+    }
+  ]
+</pre>
+
+JSON é puramente uma string com um formato de dados especificado — ele contém apenas propriedades, nenhum método. <br><br>
+
+JSON requer que aspas duplas sejam usadas em torno de strings e nomes de propriedades. Aspas simples não são válidas, exceto ao redor de toda a string JSON. <br><br>
+
+Você pode validar JSON usando um aplicativo como <link rel="stylesheet" href="https://jsonlint.com/">https://jsonlint.com/</link> <br><br>
+
+JSON pode realmente assumir a forma de qualquer tipo de dado que seja válido para inclusão dentro de JSON, não apenas arrays ou objetos. Então, por exemplo, uma única string ou número seria JSON válido. <br><br>
+
+Diferentemente do código JavaScript, no qual as propriedades do objeto podem não estar entre aspas, no JSON somente strings entre aspas podem ser usadas como propriedades.
+
+parse(): Aceita uma string JSON como parâmetro e retorna o objeto JavaScript correspondente.
+
+stringify(): Aceita um objeto como parâmetro e retorna a string JSON equivalente.

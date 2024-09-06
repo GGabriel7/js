@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON: Cats</title>
+</head>
+<body>
+    <section>
+
+    </section>
+
+    <script>
+        async function populate() {
+            const requestURL = "https://raw.githubusercontent.com/mdn/learning-area/main/javascript/oojs/tasks/json/sample.json";
+            const request = new Request(requestURL);
+
+            const response = await fetch(request);
+            const catsTXT = await response.text();
+
+            const cats = JSON.parse(catsTXT);
+
+            populateCats(cats)
+        }
+
+        function populateCats (obj) {
+            const section = document.querySelector('section');
+            const motherInfo = document.createElement('p');
+            const kittenInfo = document.createElement('p');
+
+            motherInfo.textContent = 'Nome das mães: '
+            for (let i = 0; i < obj.length; i++) {
+                if (obj[i] === obj[obj.length-1]) {
+                    motherInfo.textContent += `and ${obj[i].name}.`;
+                } else {
+                    motherInfo.textContent += `${obj[i].name}, `;
+                }
+            }
+
+            let quantFilhote = 0;
+            let filhoteM = 0;
+            let filhoteF = 0
+            for (let i = 0; i < obj.length; i++) {
+                quantFilhote += obj[i].kittens.length
+
+                for(let j=0; j < obj[i].kittens.length; j++) {
+                    if (obj[i].kittens[j].gender === 'm') {
+                        filhoteM++
+                    } else {
+                        filhoteF++
+                    }
+                }
+            }
+
+            kittenInfo.textContent = `Quantidade de filhotes: ${quantFilhote} / Machos: ${filhoteM}; Fêmeas: ${filhoteF}`;
+            
+            section.appendChild(motherInfo);
+            section.appendChild(kittenInfo);
+        }
+
+        populate();
+    </script>
+</body>
+</html>
