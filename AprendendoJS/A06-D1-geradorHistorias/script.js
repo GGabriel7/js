@@ -25,7 +25,7 @@ function result() {
 
         const yindex =  ['cozinha comunitária', 'Disneylandia', 'Casa branca']
 
-        const zindex =  ['combustão espontânea', 'derreteu em uma poça na calçada', 'virou uma lesma e rastejou para longe']
+        const zindex =  ['sofreu uma combustão espontânea', 'derreteu em uma poça na calçada', 'virou uma lesma e rastejou para longe']
 
         textTotal = `Fazia 34.5°C lá fora, então ${randomValueFromArray(xindex)} foi dar uma caminhada. Quando chegou na ${randomValueFromArray(yindex)}, ele ficou horrorizados por alguns momentos, depois ${randomValueFromArray(zindex)}. Bob viu tudo, mas não ficou surpreso — ${randomValueFromArray(xindex)} pesava 136Kg e era um dia quente.`
     }

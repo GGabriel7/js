@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+      </section>
+
+      <script>
+        const link = document.querySelector('a');
+        link.textContent = "Mozilla Developer Network";
+        link.href = 'https://developer.mozilla.org';
+
+        const sect = document.querySelector("section");
+        const newP = document.createElement('p');
+        newP.textContent = 'We hope you enjoyed the ride.';
+        sect.appendChild(newP);
+
+        const text = document.createTextNode(
+            " — the premier source for web development knowledge.",
+        );//cria um texto em um nó
+        const linkPara = document.querySelector('p');
+        linkPara.appendChild(text);//adiconando o texto criado.
+
+        sect.appendChild(linkPara) // movendo o nó com texto para outro elemento.
+
+        //linkPara.remove(); remove um elemento
+
+        //linkPara.parentNode.removeChild(linkPara);
+      </script>
+</body>
+</html>
